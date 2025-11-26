@@ -9,9 +9,9 @@
 		<version>7</version>
 	</parent>
 
-	<groupId>org.dockingframes</groupId>
+	<groupId>io.github.jmtanguy</groupId>
 	<artifactId>docking-frames-base</artifactId>
-	<version>1.1.3p1</version>
+	<version>2.0.0</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -22,7 +22,7 @@
 		<module>docking-frames-ext-toolbar-common</module>
 		<module>docking-frames-ext-css-theme</module>
 
-		<!-- TODO ask Steffen Kux, software@kuxfamily.de to publish glasslib.jar 
+		<!-- TODO ask Steffen Kux, software@kuxfamily.de to publish glasslib.jar
 			on maven -->
 		<module>docking-frames-ext-glass</module>
 
@@ -30,18 +30,13 @@
 
 		<module>docking-frames-demo-app-ice</module>
 		<module>docking-frames-demo-chess</module>
-		<module>docking-frames-demo-help</module>
 		<module>docking-frames-demo-layouts</module>
 		<module>docking-frames-demo-notes</module>
 		<module>docking-frames-demo-paint</module>
 		<module>docking-frames-demo-size-and-color</module>
-		<module>docking-frames-demo-app</module>
 
 		<module>docking-frames-demo-tutorial</module>
 		<module>docking-frames-ext-toolbar-tutorial</module>
-
-		<module>docking-frames-dist</module>
-		<module>docking-frames-glass-dist</module>
 	</modules>
 
 	<name>${project.artifactId}</name>
@@ -57,9 +52,9 @@
 	</organization>
 
 	<scm>
-		<url>https://github.com/Benoker/DockingFrames</url>
-		<connection>scm:git:git://github.com/Benoker/DockingFrames.git</connection>
-		<developerConnection>scm:git:git@github.com:Benoker/DockingFrames.git</developerConnection>
+		<url>https://github.com/jmtanguy/dockingframes-sunshine</url>
+		<connection>scm:git:git://github.com/jmtanguy/dockingframes-sunshine.git</connection>
+		<developerConnection>scm:git:git@github.com:jmtanguy/dockingframes-sunshine.git</developerConnection>
 	</scm>
 
 	<licenses>
@@ -180,15 +175,24 @@
 				<role>contributor</role>
 			</roles>
 		</developer>
+		<developer>
+			<id>tanguy.studio@hotmail.com</id>
+			<email>tanguy.studio@hotmail.com</email>
+			<name>JM Tanguy</name>
+			<properties>
+				<credits>Fork du projet</credits>
+			</properties>
+			<roles>
+				<role>maintainer</role>
+			</roles>
+		</developer>
 	</developers>
 
 	<properties>
-		<javaVersion>1.6</javaVersion>
-		<maven.compiler.source>${javaVersion}</maven.compiler.source>
-		<maven.compiler.target>${javaVersion}</maven.compiler.target>
+		<javaVersion>17</javaVersion>
+		<maven.compiler.release>${javaVersion}</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
-		<toolsJar>${java.home}/../lib/tools.jar</toolsJar>
 	</properties>
 
 	<build>
@@ -229,7 +233,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.7.0</version>
+					<version>3.11.0</version>
 				</plugin>
 
 				<plugin>
@@ -354,12 +358,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.0</version>
+				<version>3.6.3</version>
 				<configuration>
 					<quiet>true</quiet>
 					<verbose>false</verbose>
 					<links>
-						<link>http://java.sun.com/javase/1.6.0/docs/api</link>
+						<link>https://docs.oracle.com/en/java/javase/17/docs/api/</link>
 						<show>public</show>
 					</links>
 					<excludePackageNames>bibliothek.gui.dock.station.split.layout</excludePackageNames>

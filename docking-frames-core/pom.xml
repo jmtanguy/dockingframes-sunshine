@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.dockingframes</groupId>
+		<groupId>io.github.jmtanguy</groupId>
 		<artifactId>docking-frames-base</artifactId>
-        <version>1.1.3p1</version>
+        <version>2.0.0</version>
 	</parent>
 
 	<artifactId>docking-frames-core</artifactId>
@@ -17,15 +17,15 @@
     <profiles>
         <profile>
             <activation>
-                <!-- This profile is activated when jdk >= 1.6 -->
-                <jdk>[1.6,)</jdk>
+                <!-- This profile is activated when jdk >= 17 -->
+                <jdk>[17,)</jdk>
             </activation>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>build-helper-maven-plugin</artifactId>
-                        <version>1.7</version>
+                        <version>3.3.0</version>
                         <executions>
                             <execution>
                                 <id>add-source</id>
