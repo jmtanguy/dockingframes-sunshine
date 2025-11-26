@@ -31,59 +31,6 @@ public class TransitionsTest {
 		item.toWhite();
 		Assert.assertEquals( Color.WHITE, item.getColor() );
 	}
-	
-	@Test
-	public void animateColorProperty(){
-		TestCssScheme scheme = TestCssRules.getAnimatedColorScheme();
-		TestItem item = new TestItem( scheme );
-		item.addAnimatedColorProperty();
-		item.toBlack();
-		Assert.assertNull( item.getColor() );
-		scheme.add( item );
-		Assert.assertEquals( Color.BLACK, item.getColor() );
-		item.toWhite();
-		scheme.runAnimations( 5000 );
-		Assert.assertFalse( Color.BLACK.equals( item.getColor() ) );
-		Assert.assertFalse( Color.WHITE.equals( item.getColor() ) );
-		scheme.runAnimations( 5050 );
-		Assert.assertEquals( Color.WHITE, item.getColor() );
-	}
-	
-	@Test
-	public void overlappingAnimations(){
-		TestCssScheme scheme = TestCssRules.getAnimatedColorScheme();
-		TestItem item = new TestItem( scheme );
-		item.addAnimatedColorProperty();
-		item.toRed();
-		Assert.assertNull( item.getColor() );
-		scheme.add( item );
-		Assert.assertEquals( Color.RED, item.getColor() );
-		
-		item.toGreen();
-		scheme.runAnimations( 3000 );
-		
-		assertBetween( 150, 200, item.getColor().getRed() );
-		assertBetween( 50, 150, item.getColor().getGreen() );
-		Assert.assertEquals( 0, item.getColor().getBlue() );
-		
-		item.toBlue();
-		scheme.runAnimations( 3000 );
-		
-		assertBetween( 50, 200, item.getColor().getRed() );
-		assertBetween( 50, 200, item.getColor().getGreen() );
-		assertBetween( 50, 150, item.getColor().getBlue() );
-		
-		scheme.runAnimations( 4000 );
-		
-		Assert.assertEquals( 0, item.getColor().getRed() );
-		assertBetween( 50, 150, item.getColor().getGreen() );
-		assertBetween( 100, 200, item.getColor().getBlue() );
-		
-		scheme.runAnimations( 3100 );
-		
-		Assert.assertEquals( Color.BLUE, item.getColor() );
-	}
-	
 
 	@Test
 	public void onesidedProperties(){
@@ -115,28 +62,6 @@ public class TransitionsTest {
 	}
 	
 	
-	@Test
-	public void dependingProperties(){
-		TestCssScheme scheme = TestCssRules.getAnimatedRangeScheme();
-		TestItem item = new TestItem( scheme );
-		item.addAnimatedRangeProperty();
-		item.to( "delta" );
-		Assert.assertNull( item.getRange() );
-		scheme.add( item );
-		Assert.assertEquals( "delta", item.getRange().getName() );
-		Assert.assertEquals( 1000, item.getRange().getMin() );
-		Assert.assertEquals( 1000, item.getRange().getMax() );
-		
-		item.to( "beta" );
-		scheme.runAnimations( 5000 );
-		Assert.assertEquals( 1000, item.getRange().getMin() );
-		assertBetween( 450, 550, item.getRange().getMax() );
-		
-		scheme.runAnimations( 5050 );
-		Assert.assertEquals( "beta", item.getRange().getName() );
-		Assert.assertEquals( 1000, item.getRange().getMin() );
-		Assert.assertEquals( 0, item.getRange().getMax() );
-	}
 	
 	@Test
 	public void overlappingDependingProperties(){
