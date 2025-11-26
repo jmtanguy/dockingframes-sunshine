@@ -36,8 +36,7 @@ import bibliothek.util.Colors;
 
 
 /**
- * A {@link ColorTransmitter} that connects {@link TabColor}s with the
- * {@link EclipseTheme}.
+ * A color transmitter that connects tab colors with the Eclipse theme.
  * @author Benjamin Sigg
  */
 public class GlassEclipseTabTransmitter extends TabColorTransmitter implements CColorBridge{

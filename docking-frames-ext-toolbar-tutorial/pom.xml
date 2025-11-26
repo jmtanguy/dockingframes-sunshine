@@ -53,12 +53,12 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>io.github.jmtanguy</groupId>
       <artifactId>docking-frames-demo-tutorial</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>io.github.jmtanguy</groupId>
       <artifactId>docking-frames-ext-toolbar-common</artifactId>
       <version>${project.version}</version>
     </dependency>

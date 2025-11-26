@@ -65,7 +65,7 @@ public class CGlassStripPainter implements TabPanePainter {
 
    /**
     * Creates a new painter.
-    * @param tabbedComponent the component for which this painter will work
+    * @param pane the component for which this painter will work
     */
    public CGlassStripPainter (EclipseTabPane pane) {
       this.pane = pane;
