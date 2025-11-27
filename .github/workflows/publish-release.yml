@@ -29,13 +29,6 @@ jobs:
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
 
-      - name: Publish GPG key to keyservers
-        run: |
-          KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | awk '{print $2}' | cut -d'/' -f2)
-          echo "Publishing key ID: $KEY_ID"
-          gpg --keyserver keys.openpgp.org --send-keys $KEY_ID || true
-          gpg --keyserver keyserver.ubuntu.com --send-keys $KEY_ID || true
-
       - name: Build and Deploy to Maven Central
         env:
           MAVEN_USERNAME: ${{ secrets.SONATYPE_USERNAME }}

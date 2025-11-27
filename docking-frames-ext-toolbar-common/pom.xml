@@ -44,7 +44,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>io.github.jmtanguy</groupId>
       <artifactId>docking-frames-ext-toolbar</artifactId>
       <version>${project.version}</version>
     </dependency>

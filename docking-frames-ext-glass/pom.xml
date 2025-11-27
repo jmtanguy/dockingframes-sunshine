@@ -59,10 +59,35 @@
 				</includes>
 			</resource>
 		</resources>
+
+		<plugins>
+			<!-- Install glasslib.jar to local maven repo automatically -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install-glasslib</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/libs/glassLib/glasslib.jar</file>
+							<groupId>kux</groupId>
+							<artifactId>glasslib</artifactId>
+							<version>1.0</version>
+							<packaging>jar</packaging>
+							<localRepositoryPath>${project.basedir}/repo</localRepositoryPath>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>io.github.jmtanguy</groupId>
 			<artifactId>docking-frames-common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
