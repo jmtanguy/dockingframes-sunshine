@@ -36,7 +36,8 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           mvn -B -e clean deploy -Prelease \
-            -pl docking-frames-core,docking-frames-common,docking-frames-ext-toolbar,docking-frames-ext-toolbar-common,docking-frames-ext-css-theme \
+            -pl docking-frames-core,docking-frames-common,docking-frames-ext-toolbar,docking-frames-ext-toolbar-common,docking-frames-ext-css-theme,docking-frames-ext-glass \
+            -am \
             -Dgpg.passphrase=$GPG_PASSPHRASE \
             --file pom.xml
 
