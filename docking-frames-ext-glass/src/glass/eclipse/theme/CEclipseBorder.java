@@ -52,7 +52,7 @@ public class CEclipseBorder implements Border {
    /**
     * Creates a new border
     * @param controller the owner of this border
-    * @param fillEdges whether to paint over the edges
+    * @param cornerRadius the radius of the round corners
     * @param edges the edges that are painted round, or-ed from {@link #TOP_LEFT},
     * {@link #TOP_RIGHT}, {@link #BOTTOM_LEFT} and {@link #BOTTOM_RIGHT}
     */
@@ -65,7 +65,7 @@ public class CEclipseBorder implements Border {
 
    /**
     * Updates the edge mask for the specified placement.
-    * @param tabPlacement
+    * @param tabPlacement the tab placement
     */
    public void update4Placement (TabPlacement tabPlacement) {
       switch (tabPlacement) {

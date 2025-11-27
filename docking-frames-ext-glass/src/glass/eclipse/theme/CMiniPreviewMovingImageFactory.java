@@ -22,7 +22,7 @@ public class CMiniPreviewMovingImageFactory implements DockableMovingImageFactor
 
    /**
     * Creates a new factory.
-    * @param max the maximal size of the images created by this factory
+    * @param thumbSize the maximal size of the images created by this factory
     */
    public CMiniPreviewMovingImageFactory(int thumbSize) {
       this.thumbSize = thumbSize;
